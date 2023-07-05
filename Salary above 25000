@@ -1,0 +1,33 @@
+create table employees(First_name varchar2(30), Last_name varchar2(30), job varchar2(30), salary number(6));
+INSERT INTO EMPLOYEES (First_name, Last_name, job, salary) values ('john', 'joseph', 'hr', 15000);
+INSERT INTO EMPLOYEES (First_name, Last_name, job, salary)  values ('nick', 'david', 'manager', 25000);
+INSERT INTO EMPLOYEES (First_name, Last_name, job, salary)  values ('vasu', 'dev', 'hr', 15000);
+select * from employees;
+
+declare
+i employees%rowtype; 
+begin
+select first_name into i
+from employees where salary=25000;
+dbms_output.put_line(i.first_name);
+end;
+/
+
+BEGIN
+DBMS_OUTPUT.PUT_LINE('PRINT1');
+BEGIN
+DBMS_OUTPUT.PUT_LINE('PRINT2');
+END;
+DBMS_OUTPUT.PUT_LINE('PRINT1');
+END;
+/
+DECLARE
+select * from employees;
+BEGIN
+SELECT FIRST_NAME FROM EMPLOYEES WHERE SALARY = 25000;
+DBMS_OUTPUT.PUT_LINE('EMPLOYEES');
+BEGIN
+SELECT FIRST_NAME FROM EMPLOYEES WHERE SALARY = 25000;
+DBMS_OUTPUT.PUT_LINE('EMPLOYEES');
+END;
+/
