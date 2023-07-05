@@ -1,0 +1,48 @@
+begin
+
+dbms_output.put_line('hi');
+end;
+/
+
+DECLARE
+i number:=5;
+begin dbms_output.put_line(i);
+end;
+/
+
+DECLARE
+i varchar2(10):='hello';
+begin
+dbms_output.put_line(i);
+end;
+/
+
+
+
+create table t1(a number);
+begin 
+dbms_output.put_line(1);
+dbms_output.put_line(2);
+return;
+dbms_output.put_line(3);
+end;
+/
+goto x
+begin 
+insert into t1 values(2);
+goto x;
+insert into t1 values(5);
+insert into t1 values(6);
+<<X>>
+insert into t1 values(4);
+end;
+/
+
+select *from t1;
+declare i varchar2(30);
+j number;
+begin
+select first_name,salary into i,j from employees where salary>17000;
+dbms_output.put_line(i||''||j);
+end;
+/
